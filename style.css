@@ -1,0 +1,80 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(45deg, #ee9ca7, #ffdde1);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-light: #ffffff;
+    --spacing-lg: 2rem;
+    --spacing-md: 1rem;
+    --border-radius: 15px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui;
+    background: var(--primary-gradient);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+.glass-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-lg);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.content-card {
+    background: var(--glass-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.glow-btn {
+    background: var(--secondary-gradient);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 20px rgba(238, 156, 167, 0.5);
+}
+
+.glass-footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        padding: var(--spacing-md);
+    }
+}
